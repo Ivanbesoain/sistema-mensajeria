@@ -1,0 +1,277 @@
+/* =====================
+    RESET
+===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================
+    VARIABLES STYLE GUIDE
+===================== */
+:root {
+    --soap: #CDC3E6;
+    --blue-bell: #A491D2;
+    --dark-jungle: #1B1F21;
+    --outer-space: #444749;
+    --old-silver: #828485;
+    --platinum: #E8EBE4;
+    --white: #FFFFFF;
+}
+
+/* =====================
+    BASE
+===================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
+    color: var(--outer-space);
+}
+
+/* =====================
+    APP (DESKTOP)
+===================== */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =====================
+    SIDEBAR CONTACTOS
+===================== */
+.contacts {
+    flex: 0 0 18rem;
+    border-right: 1px solid var(--platinum);
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================
+    ESTADO USUARIO
+===================== */
+.user-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.user-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark-jungle);
+}
+
+.status {
+    font-size: 12px;
+    color: var(--old-silver);
+}
+
+/* =====================
+    BOTÓN NUEVO CHAT
+===================== */
+.new-chat {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* =====================
+    BOTÓN NUEVO CHAT 
+===================== */
+.new-chat button {
+    background-color: var(--blue-bell);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.new-chat button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(164, 145, 210, 0.35);
+    background-color: #8e7cc3; /* variación suave */
+}
+
+.new-chat button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(164, 145, 210, 0.3);
+}
+
+/* =====================
+    LISTA DE CONTACTOS
+===================== */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.8rem 1rem;
+    border-top: 1px solid var(--platinum);
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: var(--platinum);
+}
+
+.contact img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-jungle);
+}
+
+.last-message {
+    font-size: 13px;
+    color: var(--old-silver);
+}
+
+/* =====================
+    SECCIÓN PRINCIPAL
+===================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.main-center img {
+    width: 120px;
+    background-color: var(--soap);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.main-center h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-jungle);
+}
+
+.main-center p {
+    font-size: 14px;
+    max-width: 420px;
+}
+
+/* =====================
+    ICONOS INTERACTIVOS
+===================== */
+.icons span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icons span:hover {
+    transform: scale(1.2) translateY(-2px);
+    opacity: 0.8;
+}
+
+.icons span:active {
+    transform: scale(1.05);
+}
+
+
+/* =====================
+    TABLET 
+===================== */
+@media (max-width: 1024px) {
+
+    .contacts {
+        flex: 0 0 14rem;
+    }
+
+    .main-center img {
+        width: 100px;
+        padding: 1.5rem;
+    }
+
+    .main-center h1 {
+        font-size: 28px;
+    }
+}
+
+/* =====================
+    MOBILE 
+===================== */
+@media (max-width: 767px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .contacts {
+        width: 100%;
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid var(--platinum);
+    }
+
+    .contact {
+        padding: 0.6rem 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1rem;
+    }
+
+    .main-center img {
+        width: 90px;
+        padding: 1.2rem;
+    }
+
+    .main-center h1 {
+        font-size: 24px;
+    }
+
+    .main-center p {
+        font-size: 13px;
+    }
+}
